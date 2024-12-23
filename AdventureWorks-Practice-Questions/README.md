@@ -20,8 +20,8 @@ Before starting, ensure the following tools are installed on your system:
 3. **pgAdmin4:** A GUI for PostgreSQL which can be installed following the instructions [here](https://www.pgadmin.org/download/)  
 
 **Note:** 
-   - While the **psql** tool will be used to set up the database, the execution of the queries that answer the questions will be run on **pgAdmin4**'s query tool. This is because I find its graphical interface intuitive as it will allow us to easily connect to PostgreSQL instances, visualize the database objects (tables, views, functions, and so on), export and import data. 
-   - Anyway, you can still use **psql** if you wish to, pick your poison!
+    - While the **psql** tool will be used to set up the database, the execution of the queries that answer the questions will be run on **pgAdmin4**'s query tool. This is because I find its graphical interface intuitive as it will allow us to easily connect to PostgreSQL instances, visualize the database objects (tables, views, functions, and so on), export and import data. 
+    - Anyway, you can still use **psql** if you wish to, pick your poison!
  
 
 ## Operating System Notes  
@@ -63,18 +63,22 @@ Before starting, ensure the following tools are installed on your system:
 ### Step 4: Set Up a Server in pgAdmin4
 
 1. Launch pgAdmin4 and under the `Quick Links` section click the `Add New Server` button  
+
 ![step1-pgadmin](https://github.com/user-attachments/assets/c06a6e47-2b30-4c53-8492-36e6c15b06f1)
   
 2. Under the `General` tab of the `Register - Server` pop up window, add a name of your liking to the `Name` input box. In my case I called it "TestServer"  
+
 ![step2-pgadmin](https://github.com/user-attachments/assets/160244ff-0371-41ec-9477-70d2588e1d0e)
 
 3. Go to the `Connection` tab and add the host name or address as `localhost` and input your password (toggle on the `Save password` button if you like). I'll leave other options with their default values  
+
 ![step3-pgadmin](https://github.com/user-attachments/assets/57cf8005-cc28-4766-891c-7ffc4c6ac176)
 
-4. Click `Save` and this should lead you to a window like the one one below
+4. Click `Save` and this should lead you to a window like the one one below (pay attention to the highlighted left side)
 
+![step4-pgadmin](https://github.com/user-attachments/assets/1abe225f-8036-4dda-8300-8caf27225942)
 
-5. Using the psql CLI we'll create a new database (as shown in the Step 5) in addition to the `postgres` database already available, which we'll leave untouched
+5. Using the psql CLI we'll create a new database (as shown in the Step 5) in addition to the `postgres` database already available, which we'll leave untouched because some PostgreSQL tools or administrative tasks might require it
 
 ### Step 5: Create and Set Up the Database  
 
@@ -85,11 +89,9 @@ Before starting, ensure the following tools are installed on your system:
       psql -U postgres -d AdventureWorks -f install.sql
       ```
 
-      - Note that you may be prompted to enter a password depending on how you've configured your `postgres` user in the `pg_hba.conf` file
-      - The `-U postgres` flag ensures that we connect to the PostgreSQL default superuser (administrator account) `postgres` that is created when PostgreSQL is installed
-      - If you get any error, check out the internet for solutions
-
-   psql -U postgres -c "\l"
+     - Note that you may be prompted to enter a password depending on how you've configured your `postgres` user in the `pg_hba.conf` file
+    - The `-U postgres` flag ensures that we connect to the PostgreSQL default superuser (administrator account) `postgres` that is created when PostgreSQL is installed
+    - If you get any error, check out the internet for solutions
 
 ## Verifying the Setup  
  -  Once the setup is complete, you can list all tables in the database by running the following commands:
@@ -108,6 +110,7 @@ Before starting, ensure the following tools are installed on your system:
 
 - Alternatively, you can go to the pgAdmin4 interface and refresh the server by right clicking the `Servers` option to locate the `Refresh...` option and checking if the database and its objects are correctly set in the `Schema` option where you are suppose to 11 schemas
 
+![step5-pgadmin](https://github.com/user-attachments/assets/aa1787ae-541a-4726-8860-5889f9a00940)
 
 ## Using pgAmin4's Query Tool
 
