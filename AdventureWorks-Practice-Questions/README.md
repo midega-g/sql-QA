@@ -62,10 +62,18 @@ Before starting, ensure the following tools are installed on your system:
 
 ### Step 4: Set Up a Server in pgAdmin4
 
-1. Launch pgAdmin4 and under the `Quick Links` section click the `Add New Server` button
-2. Under the `General` tab of the `Register - Server` pop up window, add a name of your liking to the `Name` input box. In my case I called it "SampleTest".
-3. Go to the `Connection` tab and add the host name or address as `localhost` and input your password (toggle on the `Save password` button if you like). I'll leave other options with the default value and 
+1. Launch pgAdmin4 and under the `Quick Links` section click the `Add New Server` button  
+![step1-pgadmin](https://github.com/user-attachments/assets/c06a6e47-2b30-4c53-8492-36e6c15b06f1)
+  
+2. Under the `General` tab of the `Register - Server` pop up window, add a name of your liking to the `Name` input box. In my case I called it "TestServer"  
+![step2-pgadmin](https://github.com/user-attachments/assets/160244ff-0371-41ec-9477-70d2588e1d0e)
+
+3. Go to the `Connection` tab and add the host name or address as `localhost` and input your password (toggle on the `Save password` button if you like). I'll leave other options with their default values  
+![step3-pgadmin](https://github.com/user-attachments/assets/57cf8005-cc28-4766-891c-7ffc4c6ac176)
+
 4. Click `Save` and this should lead you to a window like the one one below
+
+
 5. Using the psql CLI we'll create a new database (as shown in the Step 5) in addition to the `postgres` database already available, which we'll leave untouched
 
 ### Step 5: Create and Set Up the Database  
