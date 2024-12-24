@@ -41,7 +41,7 @@ If a salesperson made $1,000 in Fiscal Year 2014, Quarter 2, and $900 in Fiscal 
 - `SalesPersonID` in SalesOrderHeader joins with SalesPerson
 
 
-# Solution 1: Using Temporary Tables
+# Solution 1: Unified Table Approach
 
 ```sql
 -- create temporary table for fiscal sales
@@ -87,6 +87,8 @@ order by t3.lastname;
 
 # Solution 1 Breakdown
 
+In this solution, all data is first consolidated into a single temporary table (`fiscal_data`), which is then self-joined to perform year-over-year comparisons.
+
 **Step 1: Create a temporary table**
 
 - A temporary table (`fiscal_data`) is created to store fiscal year (`FY`), fiscal quarter (`FQ`), and sales (`FQSales`) for each salesperson.
@@ -104,7 +106,7 @@ order by t3.lastname;
 - A filter is also applied to ensure that the analysis focuses on fiscal year 2014, as the base year, while at the same time pulling in comparative data for fiscal year 2013 
 - The results are then sorted alphabetically by the salesperson’s last name
 
-# Solution 2: Using CTEs
+# Solution 2: Year-Specific Segmentation Approach
 
 
 ```sql
@@ -153,6 +155,8 @@ order by t3.lastname;
 ```
 
 # Solution 2 Breakdown
+
+In this solution, data for each fiscal year is segregated into distinct datasets (`sales_performance_14` and `sales_performance_13`) before being joined and analyzed
 
 **Step 1: Define the Common Table Expressions (CTEs)**  
 - Two CTEs are created to store sales performance data for fiscal years 2014 (`sales_performance_14`) and 2013 (`sales_performance_13`)
