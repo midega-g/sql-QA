@@ -132,3 +132,11 @@ Everything from now on will then use pgAdmin GUI, but you are welcomed to use th
 🧑‍💻For those specifically looking for SQL Server solutions, I found this [GitHub repository](https://github.com/shrutichen86/SQL-Queries/blob/master/Real%20SQL%20Queries%2050%20Challenges.txt) to be a useful resource
 
 
+# Disclaimer 🔊🔊
+
+- The original questions and solutions are credited to the author, Brian Cohen, and this content is intended for educational purposes only
+- The context and explanations provided are my interpretations, aimed at enhancing understanding and usability for PostgreSQL users
+- Despite thorough testing, there may be errors or inaccuracies in the solutions. Therefore, I encourage you to validate and adapt the code to fit your specific needs
+
+
+
