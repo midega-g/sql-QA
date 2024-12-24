@@ -174,8 +174,8 @@ In this solution, data for each fiscal year is segregated into distinct datasets
 - `t1` is derived from the `sales_performance_14` CTE while `t2` is derived from the `sales_performance_13` CTE
 - `t3` is from the `person.person` table and is used to retrieve the `LastName` of each salesperson involved.
 - A `LEFT JOIN` is then used to combine `t1` with `t2` to ensure that rows from `t1` are included even if there’s no matching record in `t2`.
-- Here, the join conditions for the `LEFT JOIN` one ensures that there matches of rows for the same salesperson and that the same fiscal quarter is being compared across years.
-- Similar to Solution 1 (Step 2), an `INNER JOIN` is used to combine the result with `person.person` (`t3`) to retrieve the salesperson’s last name to ensure that only salespeople with valid data in `person.person` are included.
+- Here, the join conditions for the `LEFT JOIN` ensures that there matches of rows for the same salesperson from `t1` and `t2`, and that the same fiscal quarter is being compared across years.
+- Similar to Solution 1 (Step 2), an `INNER JOIN` is used to combine the result with `person.person` (`t3`) table to retrieve the salesperson’s last name to ensure that only salespeople with valid data in `t3` are included.
 - The results are then sorted alphabetically by the salesperson’s last name.
 
 
