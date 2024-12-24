@@ -38,7 +38,7 @@ If a salesperson made $1,000 in Fiscal Year 2014, Quarter 2, and $900 in Fiscal 
 - `OrderDate` (to determine fiscal year and quarter)
 - `SalesPersonID` (to identify the salesperson)
 - `SubTotal` (for sales revenue, excluding tax and freight)
-- `SalesPersonID` in SalesOrderHeader joins with SalesPerson
+- `SalesPersonID` in `SalesOrderHeader` joins with `SalesPerson`
 
 
 # Solution 1: Unified Table Approach
@@ -67,6 +67,7 @@ group by
 -- self-join the temporary table with other tables
 select
 	t3.lastname as "LastName",
+	t1.salespersonid as "SalesPersonID",
 	t1."FY",
 	t1."FQ",
 	t1."FQSales" as "FQSales14",
@@ -138,7 +139,8 @@ with
 			extract(quarter from orderdate + interval '6 months')
 	)
 select 
-	t3.lastname,
+	t3.lastname as "LastName",
+	t1.salespersonid as "SalesPersonID",
 	t1."FY",
 	t1."FQ",
 	t1."FQSalesCurrent",
