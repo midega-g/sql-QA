@@ -41,6 +41,10 @@ If a salesperson made $1,000 in Fiscal Year 2014, Quarter 2, and $900 in Fiscal 
 - `SalesPersonID` in `SalesOrderHeader` joins with `SalesPerson`
 
 
+# Expected Output
+
+![query-output](https://github.com/user-attachments/assets/7ce48a66-19a0-4ba8-894b-cbe6404fc470)
+
 # Solution 1: Unified Table Approach
 
 ```sql
